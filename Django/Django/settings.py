@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'fruit',
+    'sns',
     
     'rest_framework',
     'strawberry.django',
