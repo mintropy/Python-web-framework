@@ -1,3 +1,4 @@
+"""Fast API main"""
 from typing import Optional
 from fastapi import FastAPI
 
