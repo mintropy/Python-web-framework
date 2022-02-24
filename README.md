@@ -17,14 +17,14 @@ User {
 }
 Article {
     int id
-    str title
+    str(20) title
     str content
     datetime created_at
     datetime updated_at
 }
 Reply {
     int id
-    str content
+    str(100) content
     datetime created_at
     datetime updated_at
 }
