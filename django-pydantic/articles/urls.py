@@ -4,10 +4,10 @@ from .views.article import ArticleViewSet
 
 
 article_list = ArticleViewSet.as_view({
-    'get': 'list'
+    'get': 'list',
 })
 article_detail = ArticleViewSet.as_view({
-    'get': 'retrieve'
+    'get': 'retrieve',
 })
 
 urlpatterns = [
