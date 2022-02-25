@@ -17,14 +17,14 @@ User {
 }
 Article {
     int id
-    str(20) title
+    str title
     str content
     datetime created_at
     datetime updated_at
 }
 Reply {
     int id
-    str(100) content
+    str content
     datetime created_at
     datetime updated_at
 }
@@ -33,5 +33,8 @@ User }o--|| Article : write
 User }o--|| Reply : write
 Article }o--|| Reply : contain
 ```
+
+- Article - title : string(20)
+- Reply - content : string(20)
 
 # API
