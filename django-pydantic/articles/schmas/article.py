@@ -1,9 +1,6 @@
 import datetime
 
-from djantic import ModelSchema
-from pydantic import BaseModel
-
-from ..models import Article
+from pydantic import BaseModel, validator
 
 
 class ArticleListSchema(BaseModel):
@@ -20,3 +17,8 @@ class ArticleDetailSchema(BaseModel):
     created_at: datetime.datetime
     updated_at: datetime.datetime
 
+    @validator('title')
+    def title_length(cls, v):
+        if len(v) > 20:
+            return None
+        return v
