@@ -38,3 +38,8 @@ Article }o--|| Reply : contain
 - Reply - content : string(20)
 
 # API
+
+## Articles
+- `articles/` GET 전체 게시글 목록
+- `articles/` POST 전체 게시글 목록
+- `articles/<article_id>/` GET 특정 게시글 조회
