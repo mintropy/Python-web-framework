@@ -1,17 +1,11 @@
-"""Fast API main"""
-from typing import Optional
-
 from fastapi import FastAPI
 
-from .articles import router
+from FastAPI.routers import articles
+
 
 app = FastAPI()
 
-app.include_router(
-    router.article_router
-)
-
-
-@app.get('/')
-def read_root():
-    return {'Hello': 'World'}
+# app.include_router(
+#     articles.router,
+#     prefix="/articles"
+# )
