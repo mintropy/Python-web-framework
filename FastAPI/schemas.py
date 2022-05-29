@@ -13,6 +13,6 @@ class ArticleCreate(ArticleBase):
 
 class Article(ArticleBase):
     id: int
-    
+
     class Config:
         orm_mode = True

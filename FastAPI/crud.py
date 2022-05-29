@@ -8,8 +8,7 @@ def get_article_list(db: Session):
 
 
 def get_article(db: Session, article_id: int):
-    return db.query(models.Article)\
-        .filter(models.Article.id == article_id).first()
+    return db.query(models.Article).filter(models.Article.id == article_id).first()
 
 
 def create_article(db: Session, article: schemas.ArticleCreate):
