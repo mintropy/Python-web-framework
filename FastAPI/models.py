@@ -11,8 +11,8 @@ class User(Base):
     username = Column(String, unique=True)
     hashed_password = Column(String)
 
-    articles = relationship("Article", back_populates="user")
-    replies = relationship("Article", back_populates="user")
+    # articles = relationship("Article", back_populates="user")
+    # replies = relationship("Article", back_populates="user")
 
 
 class Article(Base):
@@ -23,10 +23,10 @@ class Article(Base):
     content = Column(String)
     created_at = Column(DateTime)
     updated_at = Column(DateTime)
-    article_user_id = column(Integer, ForeignKey("users.id"))
+    # article_user_id = column(Integer, ForeignKey("users.id"))
 
-    user = relationship("User", back_populates="articles")
-    replies = relationship("Reply", back_populates="article")
+    # user = relationship("User", back_populates="articles")
+    # replies = relationship("Reply", back_populates="article")
 
 
 class Reply(Base):
@@ -36,8 +36,8 @@ class Reply(Base):
     content = Column(String)
     created_at = Column(DateTime)
     updated_at = Column(DateTime)
-    reply_user_id = column(Integer, ForeignKey("users.id"))
+    # reply_user_id = column(Integer, ForeignKey("users.id"))
     reply_article_id = column(Integer, ForeignKey("articles.id"))
 
-    user = relationship("User", back_populates="replies")
-    article = relationship("Article", back_populates="replies")
+    # user = relationship("User", back_populates="replies")
+    # article = relationship("Article", back_populates="replies")
