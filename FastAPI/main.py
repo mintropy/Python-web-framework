@@ -29,6 +29,7 @@ def read_articles(db: Session = Depends(get_db)):
 def read_article_detail(article_id: int, db: Session = Depends(get_db)):
     return crud.get_article_detail(db=db, article_id=article_id)
 
+app = FastAPI()
 
 @app.post("/articles/", response_model=schemas.ArticleBase)
 def create_article(article: schemas.ArticleBase, db: Session = Depends(get_db)):
