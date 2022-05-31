@@ -9,7 +9,8 @@
     - DRF의 serialzier대신 pydantic을 활용해보는 프로젝트입니다.
 3. Django + django-ninja
     - DRF대신 django-ninja를 활용하는 프로젝트입니다.
-4. FasAPI
+4. [FasAPI](FastAPI/README.md)
+    - FastAPI, Pydantic, SQLAlchempy를 활용한 프로젝트입니다.
 
 ---
 # 설계
@@ -47,5 +48,5 @@ Article }o--|| Reply : contain
 
 #### Articles
 - `articles/` GET 전체 게시글 목록
-- `articles/` POST 전체 게시글 목록
+- `articles/` POST 게시글 작성
 - `articles/<article_id>/` GET 특정 게시글 조회

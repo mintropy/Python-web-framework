@@ -3,6 +3,7 @@
 # Edit at https://www.toptal.com/developers/gitignore?templates=windows,visualstudiocode,python,django,flask
 
 serect/
+*.db
 
 ### Django ###
 *.log
