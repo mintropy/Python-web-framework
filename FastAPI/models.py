@@ -33,6 +33,7 @@ class Reply(Base):
     __tablename__ = "replies"
 
     id = Column(Integer, primary_key=True, index=True)
+    content = Column(String)
     created_at = Column(DateTime)
     updated_at = Column(DateTime)
     reply_user_id = column(Integer, ForeignKey("users.id"))
