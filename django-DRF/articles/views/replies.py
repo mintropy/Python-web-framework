@@ -25,3 +25,22 @@ class ReplyViewSet(ViewSet):
             serializer.save()
             return Response(serializer.data)
         return Response(serializer.errors)
+
+    def update(self, request, article_id, reply_id):
+        reply = get_object_or_404(Reply, id=reply_id)
+        if reply.article.id != article_id:
+            return Response()
+        data = {"article": article_id, "content": request.data.get("content", None)}
+        serializer = ReplySerializer(reply, data=data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data)
+        return Response(serializer.errors)
+
+    def destroy(self, request, article_id, reply_id):
+        print("ㅇㅋ")
+        reply = get_object_or_404(Reply, id=reply_id)
+        if reply.article.id != article_id:
+            return Response()
+        reply.delete()
+        return Response()
