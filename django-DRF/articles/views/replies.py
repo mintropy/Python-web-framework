@@ -38,7 +38,6 @@ class ReplyViewSet(ViewSet):
         return Response(serializer.errors)
 
     def destroy(self, request, article_id, reply_id):
-        print("ㅇㅋ")
         reply = get_object_or_404(Reply, id=reply_id)
         if reply.article.id != article_id:
             return Response()
