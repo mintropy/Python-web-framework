@@ -5,15 +5,15 @@
   <title>Document</title>
 </head>
 <body>
-  <li>
-    <ul>1</ul>
-    <ul>2</ul>
-  </li>
+  <h1>Articles</h1>
+  <div id="articles"></div>
 </body>
 <script>
   fetch("http://127.0.0.1:8000/articles/")
-    .then(function(res) {
-      console.log(res)
-    })
+  .then(res => res.json())
+  .then(data => {
+    console.log(data)
+  })
+  .catch(err => console.log(err))
 </script>
 </html>
