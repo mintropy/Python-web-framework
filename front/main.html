@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <li>
+    <ul>1</ul>
+    <ul>2</ul>
+  </li>
+</body>
+<script>
+  fetch("http://127.0.0.1:8000/articles/")
+    .then(function(res) {
+      console.log(res)
+    })
+</script>
+</html>
