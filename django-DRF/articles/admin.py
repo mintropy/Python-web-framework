@@ -5,9 +5,24 @@ from .models import Article, Reply
 
 @admin.register(Article)
 class ArticleAdmin(admin.ModelAdmin):
-    pass
+    class ReplyInline(admin.TabularInline):
+        model = Reply
+
+    list_display = (
+        "id",
+        "title",
+        "created_at",
+        "updated_at",
+    )
+    list_display_links = ("title",)
+    inlines = [ReplyInline]
 
 
 @admin.register(Reply)
 class ReplyAdmin(admin.ModelAdmin):
-    pass
+    list_display = (
+        "id",
+        "article",
+        "created_at",
+        "updated_at",
+    )
