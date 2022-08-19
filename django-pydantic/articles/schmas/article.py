@@ -17,7 +17,7 @@ class ArticleDetailSchema(BaseModel):
     created_at: datetime.datetime
     updated_at: datetime.datetime
 
-    @validator('title')
+    @validator("title")
     def title_length(cls, v):
         if len(v) > 20:
             return None
