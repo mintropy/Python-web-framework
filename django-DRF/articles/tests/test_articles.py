@@ -4,7 +4,7 @@ from rest_framework.test import APITestCase
 from rest_framework.views import status
 
 
-def TestArticle(APITestCase):
+class TestArticle(APITestCase):
     def test_list_article(self) -> None:
         url = reverse("article list")
         res = self.client.get(url)
