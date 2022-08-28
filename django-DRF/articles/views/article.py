@@ -3,6 +3,7 @@ from django.shortcuts import get_object_or_404
 
 from rest_framework.viewsets import ViewSet
 from rest_framework.response import Response
+from rest_framework.views import status
 
 from ..models import Article
 from ..serializers.article import ArticleListSerialzier, ArticleDetailSerializer
@@ -25,8 +26,8 @@ class ArticleViewSet(ViewSet):
         serializer = ArticleDetailSerializer(data=data)
         if serializer.is_valid():
             serializer.save()
-            return Response(serializer.data)
-        return Response(serializer.errors)
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
     def retrieve(self, requset, article_id):
         article = get_object_or_404(Article, id=article_id)
