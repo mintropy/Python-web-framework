@@ -8,11 +8,15 @@ class ArticleListSerialzier(serializers.ModelSerializer):
 
     class Meta:
         model = Article
-        fields = ('id', 'title', 'created_at', 'replies_count',)
+        fields = (
+            "id",
+            "title",
+            "created_at",
+            "replies_count",
+        )
 
 
 class ArticleDetailSerializer(serializers.ModelSerializer):
-
     class Meta:
         model = Article
-        fields = '__all__'
+        fields = "__all__"

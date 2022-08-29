@@ -11,7 +11,7 @@ class Article(models.Model):
 class Reply(models.Model):
     article = models.ForeignKey(
         Article,
-        related_name='replies',
+        related_name="replies",
         on_delete=models.CASCADE,
     )
     content = models.CharField(max_length=100)

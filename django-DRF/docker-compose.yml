@@ -1,0 +1,14 @@
+version: "3"
+
+services:
+  db:
+    image: mysql
+    restart: always
+    container_name: drf_mysql
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_DATABASE: drf
+      MYSQL_USER: drf
+      MYSQL_PASSWORD: drf
+      MYSQL_ROOT_PASSWORD: drf
